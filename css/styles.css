@@ -1,0 +1,304 @@
+@font-face {
+    font-family: "Bodega Sans";
+    src: url('../fonts/BodegaSans_Black.ttf');
+}
+
+
+/* ====================================================== */
+/* =============== Styles globaux de base =============== */
+/* ====================================================== */
+
+* {
+    box-sizing : border-box;
+}
+
+
+/* Police, taille du texte par défaut */
+html {
+    font-size : 62.5%;
+}
+
+body {
+    background : #444 url("../img/bg_body.svg");
+    color : #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size : 1.6rem;
+    line-height : 2;
+
+}
+
+/* Styles des liens par défaut */
+a {
+    color : #ff9d00;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: underline;
+}
+
+/* Styles des titres par défaut */
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Bodega Sans";
+    font-weight : normal;
+}
+
+h1 {
+     font-size : 4rem;
+     text-align: center;
+}
+
+h2 {
+    
+    padding : 2.5rem;
+	box-shadow: -2px -2px 3px 0px rgba(0, 0, 0, .2); 
+	
+    font-size: 3rem;
+}
+
+h3 {
+    border-bottom: 2px solid #ff9d00;
+    color : #ff9d00;
+    font-size : 2.5rem;
+}
+
+img,
+video {
+    max-width : 100%;
+    height : auto;
+    vertical-align: top; 
+}
+
+figure {
+
+}
+
+
+/* ====================================================== */
+/* ============ LAYOUT,  mise en page globale =========== */
+/* ====================================================== */ 
+
+.container {
+    max-width : 1500px;
+    margin : 0 auto;
+}
+
+main {
+    max-width : 1500px;
+    margin : 0 auto;
+    padding : 2.5rem;
+    box-sizing : border-box;
+}
+
+.site-header,
+.site-footer {
+    padding : 2.5rem;
+}
+
+@media screen and (min-width: 1500px) {
+    
+    .site-header,
+    .site-footer {
+        padding-right : calc( (100% - 1500px) / 2 + 2.5rem) ;
+        padding-left : calc( (100% - 1500px) / 2 + 2.5rem) ;
+    }
+    
+}
+
+
+/* ====================================================== */
+/* =========== Header et navigation principale ========== */
+/* ====================================================== */
+
+.site-header {
+    background-color : white;
+    background: linear-gradient(145deg, white 0%, white 55%, #333 55%, #333 100%);
+
+}
+
+.site-header-nav {
+    
+    display : flex;
+    flex-direction: column;
+    align-items : flex-end;
+    
+    
+    font-family: "Bodega Sans";
+    font-size: 2.5rem;
+}
+
+.nav-link {
+
+} 
+
+@media screen and (min-width : 768px) {
+    .site-header {
+        display : flex;
+        justify-content: space-between;
+    }
+}
+
+
+/* ====================================================== */
+/* ===================== SECTIONS ======================= */
+/* ====================================================== */
+
+section {
+    padding : 2.5rem;
+}
+
+section h2 {
+    margin-left : -2.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+    
+    section {
+        display : flex;
+        flex-wrap : wrap;
+        gap : 2.5rem;
+
+    }
+
+
+    section > * {
+        flex: 1;
+    }
+
+    section h2 {
+        flex: 100%;
+    }
+}
+
+
+/* ====================================================== */
+/* ===================== ARTICLES ======================= */
+/* ====================================================== */
+
+article {
+    padding : 2.5rem;
+    background-color : #fff;
+    color : #666;
+    text-align: center;
+}
+
+article a {
+    display : block;
+    padding : 1rem .5rem;
+    background-color:#ff9d00;
+    color : white;
+    
+    transition : transform 1s;
+    
+}
+
+article a:hover,
+article a:focus,
+article a:active {
+    transform : scale(1.25) rotate(180deg);
+    background : rgba(255, 157, 0,0.5);     
+    text-decoration: none;
+}
+
+
+
+
+/* ====================================================== */
+/* =================== FOOTER DU SITE =================== */
+/* ====================================================== */
+
+
+.site-footer {
+   /* offset-x | offset-y | color */ 
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
+    color: rgba(255,255,255,0.75);
+    text-align: center;
+    font-size: 0.8em;
+}
+
+
+
+
+
+/* ====================================================== */
+/* ===================== CLASSES ======================== */
+/* ====================================================== */
+
+.relief {
+    color : #ff9d00;
+}
+
+
+ul.social {
+    
+    list-style-type : none;
+    display : flex;
+    justify-content:center;
+    gap : 2.5rem;
+    
+    padding : 0;
+    font-size : 4em;
+}
+
+.social-link {
+    color : rgba(255, 157, 0,0.5); 
+} 
+
+
+/* ====================================================== */
+/* ====================== SLIDER ======================== */
+/* ====================================================== */
+
+figure {
+    position : relative;
+    margin : 0;
+}
+
+.slider {
+    position : relative;
+}
+
+.slider figcaption {
+    position : absolute;
+    top : 1em;
+    left : 1em;
+    right : 1em;
+    
+    padding : 0.5rem 1rem;
+    background : rgb(0,0,0);
+    background : rgba(0,0,0,0.5);    
+    font-family: "Bodega Sans";
+    font-size : 2vmax;    
+    text-shadow : 3px 3px 5px #ff9d00;
+    
+} 
+
+
+.slider-figure {
+    display : none;
+}
+
+.slider-figure.is-active {
+    display : block;
+    border : 8px solid rgba(255,255,255,0.8);
+}
+
+.slider-nav {
+    display:flex;
+    justify-content: space-between;
+    
+    position : absolute;
+    left : 1em;
+    right : 1em;
+    top : 50%;
+    margin-top : -2rem;
+    font-size : 4rem;
+    line-height:1;
+}
+
+.slider-nav-link {
+    color : white;
+    opacity : 0.5;
+}
